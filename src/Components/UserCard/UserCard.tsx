@@ -87,7 +87,8 @@ export const UserCard: FC<Props> = ({
 				<Typography variant="subtitle1" marginTop={1}>
 					Followers: {followers}
 				</Typography>
-				<Alert 
+				<Alert
+					severity="info" 
 					sx={{ 
 					marginTop: "15px",
 					width: "90%",
