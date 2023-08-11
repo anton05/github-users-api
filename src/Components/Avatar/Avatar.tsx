@@ -1,11 +1,14 @@
 import { FC } from "react"
-import { Box } from "@mui/material"
+import { Box, BoxProps } from "@mui/material"
 
-type Props = {
+type Props = BoxProps&{
 	src: string
 }
 
-export const Avatar: FC<Props> = ({ src }) => {
+export const Avatar: FC<Props> = ({ 
+	src,
+	...props
+ }) => {
 	return (
 		<Box 
 			component="img" 
@@ -13,6 +16,7 @@ export const Avatar: FC<Props> = ({ src }) => {
 			maxHeight="150px"
 			maxWidth="150px"
 			borderRadius="100%"
+			{...props}
 		/>
 	)
 }
