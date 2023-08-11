@@ -31,6 +31,8 @@ export const UserCard: FC<Props> = ({
 	} = data
 	
 	const createdDate = created_at?.split("T")[0]
+	
+	const userName = name || login
 
 	return (
 		<Card>
@@ -56,7 +58,7 @@ export const UserCard: FC<Props> = ({
 					  }}
 				 />
 				<Typography variant="h4" marginTop={2}>
-					{name ?? login}
+					{userName.length > 20 ? userName.slice(0, 16) + "..." : userName}
 				</Typography>
 				<Divider 
 					sx={{ 
