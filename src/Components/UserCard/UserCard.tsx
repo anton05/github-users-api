@@ -57,8 +57,10 @@ export const UserCard: FC<Props> = ({
 					sx={{
 						'&:hover': {
 						  transform: "scale(1.1)",
-						  boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px"
-						}
+						  boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px",
+						  border: "none"
+						},
+						border: "1px solid #D3D3D3"
 					  }}
 				 />
 				<Typography variant="h4" marginTop={2}>
