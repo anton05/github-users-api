@@ -31,6 +31,10 @@ export const UserCard: FC<Props> = ({
 	} = data
 	
 	const createdDate = created_at?.split("T")[0]
+
+	const cutString = (string: string, maxLength: number): string => {
+		return string.slice(0, maxLength) + "..."
+	}
 	
 	const userName = name || login
 
@@ -58,7 +62,7 @@ export const UserCard: FC<Props> = ({
 					  }}
 				 />
 				<Typography variant="h4" marginTop={2}>
-					{userName.length > 20 ? userName.slice(0, 16) + "..." : userName}
+					{userName.length > 20 ? cutString(userName, 16) : userName}
 				</Typography>
 				<Divider 
 					sx={{ 
@@ -68,7 +72,7 @@ export const UserCard: FC<Props> = ({
 					 }} 
 				/>
 				<Typography variant="h6" sx={{ color: "grey" }}>
-					{bio && bio.length > 100 ? bio.slice(0, 100) + "..." : bio}
+					{bio && bio.length > 100 ? cutString(bio, 100) : bio}
 				</Typography>
 			 	<Box marginTop={1}>
 					<Tooltip title="Created date" placement="right">
