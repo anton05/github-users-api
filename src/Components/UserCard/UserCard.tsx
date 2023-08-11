@@ -36,10 +36,8 @@ export const UserCard: FC<Props> = ({
 		<Card>
 			<CardContent 
 				sx={{ 
-					minWidth: "300px",
-					maxWidth: "400px",
-					minHeight: "300px",
-					maxHeight: "500px",
+					height: "490px",
+					width: "350px",
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
@@ -73,7 +71,7 @@ export const UserCard: FC<Props> = ({
 				<Typography variant="subtitle1" marginTop={1}>
 					Followers: {followers}
 				</Typography>
-				<Alert sx={{ marginTop: "15px" }}>
+				<Alert sx={{ marginTop: "15px", width: "90%" }}>
 					<Link
 						underline="hover"
 						target="_blank"
