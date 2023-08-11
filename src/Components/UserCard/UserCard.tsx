@@ -46,7 +46,15 @@ export const UserCard: FC<Props> = ({
 					textAlign: "center"
 			 }}
 			>
-				<Avatar src={avatar_url} />
+				<Avatar 
+					src={avatar_url}
+					sx={{
+						'&:hover': {
+						  transform: "scale(1.1)",
+						  boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px"
+						}
+					  }}
+				 />
 				<Typography variant="h4" marginTop={2}>
 					{name ?? login}
 				</Typography>
@@ -71,7 +79,15 @@ export const UserCard: FC<Props> = ({
 				<Typography variant="subtitle1" marginTop={1}>
 					Followers: {followers}
 				</Typography>
-				<Alert sx={{ marginTop: "15px", width: "90%" }}>
+				<Alert 
+					sx={{ 
+					marginTop: "15px",
+					width: "90%",
+					display: "flex",
+					justifyContent: "center", 
+					alignItems: "center"
+				 }}
+				>
 					<Link
 						underline="hover"
 						target="_blank"
