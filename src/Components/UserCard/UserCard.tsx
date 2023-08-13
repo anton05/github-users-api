@@ -3,8 +3,6 @@ import {
 	Card,
 	CardContent,
 	Typography,
-	Link,
-	Alert,
 	Chip,
 	Tooltip,
 	Box,
@@ -12,6 +10,7 @@ import {
  } from "@mui/material"
 import { Avatar } from "../Avatar/Avatar"
 import { User } from "../../Types/User/User"
+import { LinkCard } from "../LinkCard/LinkCard"
 
 type Props = {
 	data: User
@@ -75,6 +74,7 @@ export const UserCard: FC<Props> = ({
 					 }} 
 				/>
 				<Typography variant="h6" sx={{ color: "grey" }}>
+					{!bio && "-"}
 					{bio && bio.length > 100 ? cutString(bio, 100) : bio}
 				</Typography>
 			 	<Box marginTop={1}>
@@ -88,24 +88,16 @@ export const UserCard: FC<Props> = ({
 				<Typography variant="subtitle1" marginTop={1}>
 					Followers: {followers}
 				</Typography>
-				<Alert
-					severity="info" 
+			    <LinkCard
+					link={html_url}					
 					sx={{ 
-					marginTop: "15px",
-					width: "90%",
-					display: "flex",
-					justifyContent: "center", 
-					alignItems: "center"
-				 }}
-				>
-					<Link
-						underline="hover"
-						target="_blank"
-						href={html_url}
-					>
-						{html_url}
-					</Link>
-				</Alert>
+						marginTop: "15px",
+						width: "90%",
+						display: "flex",
+						justifyContent: "center", 
+						alignItems: "center"
+					}}
+				/>
 			</CardContent>
 		</Card>
 	)
